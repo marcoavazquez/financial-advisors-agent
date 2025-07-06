@@ -16,7 +16,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('google_id')->nullable()->unique();
+            $table->string('google_token')->nullable();
+            $table->string('google_refresh_token')->nullable();
+            $table->timestamp('google_token_expires_at')->nullable();
+            $table->unsighnedBigInteger('hubspot_user_id')->nullable();
+            $table->text('hubspot_access_token')->nullable();
+            $table->text('hubspot_refresh_token')->nullable();
+            $table->timestamp('hubspot_token_expires_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
