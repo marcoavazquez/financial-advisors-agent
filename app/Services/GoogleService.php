@@ -10,12 +10,10 @@ class GoogleService
 
   protected $client;
 
-  public function __construct(
-    User $user,
-    string $googleAuthToken = '',
-    string $googleRefreshToken = ''
-  )
+  public function __construct(User $user)
   {
+    $googleAuthToken = $user->google_auth_token;
+    $googleRefreshToken = $user->google_refresh_token;
     $this->client = new Google_Client();
     $this->client->setAccessToken($googleAuthToken);
 

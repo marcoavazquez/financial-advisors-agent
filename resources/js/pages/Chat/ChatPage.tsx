@@ -9,6 +9,8 @@ import useChat from "../../hooks/useChat";
 import useHubspot from "../../hooks/useHubspot";
 import useGoogle from "../../hooks/useGoogle";
 
+const thread_id = Math.random().toString(36).slice(2);
+
 const ChatPage = () => {
 
   const { sendMessage } = useChat()
@@ -26,10 +28,12 @@ const ChatPage = () => {
         content: formData.get('content') as string,
         is_assistant: false,
         created_at: new Date().toISOString(),
+        thread_id,
       })
       try {
         const { data } = await sendMessage({
-          content: formData.get('content') as string
+          content: formData.get('content') as string,
+          thread_id,
         })
         addMessage(data)
         return data
@@ -48,7 +52,7 @@ const ChatPage = () => {
     setSynchronizing(true)
     try {
       syncHubspot()
-      // syncGoogle()
+      syncGoogle()
     } catch (error) {
       console.error(error)
     } finally {

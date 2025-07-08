@@ -1,7 +1,7 @@
-@import './variables.scss';
-@import './base.scss';
-@import './layout.scss';
-@import './buttons.scss';
-@import './alerts.scss';
+@use './variables.scss';
+@use './base.scss';
+@use './layout.scss';
+@use './buttons.scss';
+@use './alerts.scss';
 
-@import './pages/chat.scss';
+@use './pages/chat.scss';
