@@ -1,20 +1,50 @@
 button.btn, a.btn {
+  border: none;
+  background-color: #F0F4F7;
   color: #080808;
-  border: 1px solid #F0F0F0;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.6rem;
+  transition: 0.1s ease-in-out;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 
-  svg {
+  svg, img {
     width: auto;
     height: 1.25rem;
+  }
+
+  &.btn-outlined {
+    border: 1px solid var(--border-color);
+    background-color: white;
+  }
+  &.btn-secondary {
+    background-color: white;
   }
 }
 
 a.btn {
   text-decoration: none;
+}
+
+button.btn-icon, a.btn-icon {
+  color: var(--border-color);
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: grid;
+  place-items: center;
+  svg, img {
+    width: auto;
+    height: 1rem;
+  }
+}
+
+button.btn:hover, button.btn-icon:hover {
+  // filter: brightness(0.95);
+  background-color: #F0F4F7;
 }

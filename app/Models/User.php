@@ -49,4 +49,29 @@ class User extends Authenticatable
             'google_token_expires_at' => 'datetime'
         ];
     }
+
+    public function chatMessages()
+    {
+        return $this->hasMany(ChatMessage::class);
+    }
+
+    public function emails()
+    {
+        return $this->hasMany(Email::class);
+    }
+
+    public function hubspotContacts()
+    {
+        return $this->hasMany(HubspotContact::class);
+    }
+
+    public function calendarEvents()
+    {
+        return $this->hasMany(CalendarEvent::class);
+    }
+
+    public function ongoingInstructions()
+    {
+        return $this->hasMany(OngoingInstruction::class);
+    }
 }

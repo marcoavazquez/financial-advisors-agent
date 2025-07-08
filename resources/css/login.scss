@@ -1,8 +1,9 @@
+@import './variables.scss';
+@import './base.scss';
 @import './buttons.scss';
+@import './alerts.scss';
 
 body {
   display: grid;
   place-items: center;
-  height: 100vh;
-  margin: 0;
 }

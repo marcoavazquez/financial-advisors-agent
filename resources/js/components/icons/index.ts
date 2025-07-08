@@ -1,1 +1,6 @@
 export { GoogleIcon } from './Google'
+export { CloseIcon } from './Close'
+export { AddIcon } from './Add'
+export { MicrophoneIcon } from './Microphone'
+export { HubSpotIcon } from './HubSpot'
+export { RefreshIcon } from './Refresh'

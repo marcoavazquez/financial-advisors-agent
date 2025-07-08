@@ -6,9 +6,14 @@
     <link rel="icon" href="/favicon.jpeg">
     <title>Financial Advisors AI Agent | Login</title>
     @viteReactRefresh
-    @vite(['resources/css/app.scss', 'resources/js/app.tsx'])
+    @vite(['resources/css/app.scss', 'resources/js/main.tsx'])
   </head>
   <body>
+    @error('message' )
+      <div class="alert alert-danger">
+        {{ $message }}
+      </div>
+    @enderror
     @yield('content')
   </body>
 </html>

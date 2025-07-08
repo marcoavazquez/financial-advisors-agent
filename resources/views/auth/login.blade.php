@@ -9,9 +9,16 @@
     @vite(['resources/css/login.scss'])
   </head>
   <body>
-    <a href="{{ route('auth.redirect') }}" class="btn">
-      <x-icons.google />      
-      Continue with Google
-    </a>
+    <div>
+      <a href="{{ route('auth.redirect') }}" class="btn">
+        <x-icons.google />      
+        Continue with Google
+      </a>
+      @error('message')
+        <div class="alert alert-danger">
+          {{ $message }}
+        </div>
+      @enderror
+    </div>
   </body>
 </html>

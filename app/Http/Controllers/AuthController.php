@@ -12,7 +12,12 @@ class AuthController extends Controller
     public function redirect()
     {
         return Socialite::driver('google')
-            ->scopes(['openid', 'email', 'profile', 'https://www.googleapis.com/auth/calendar'])
+            ->scopes([
+                'openid',
+                'email',
+                'profile',
+                'https://www.googleapis.com/auth/calendar',
+            ])
             ->redirect();
     }
 
@@ -34,7 +39,7 @@ class AuthController extends Controller
             Auth::login($authUser);
             return redirect()->route('home');
         } catch (\Exception $e) {
-            return redirect()->route('login')->withErrors(['error' => 'Failed to login with Google.']);
+            return redirect()->route('login')->withErrors(['message' => $e->getMessage()]);
         }
     }
 }

@@ -26,5 +26,13 @@ return [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URI', 'http://localhost:8000/auth/google/callback'),
-    ]
+    ],
+
+    'hubspot' => [
+        'api_key' => env('HUBSPOT_API_KEY'),
+        'client_id' => env('HUBSPOT_CLIENT_ID'),
+        'client_secret' => env('HUBSPOT_CLIENT_SECRET'),
+        'redirect_uri' => env('HUBSPOT_REDIRECT_URI'),
+        'base_url' => 'https://api.hubapi.com',
+    ],
 ];

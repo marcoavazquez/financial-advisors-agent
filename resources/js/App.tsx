@@ -1,7 +1,15 @@
 import React from "react";
+import ChatPage from "./pages/Chat/ChatPage";
+import { Container } from "./components";
 
 const App: React.FC = () => {
-  return <div>This is the app</div>
+  return (
+    <main>
+      <Container>
+        <ChatPage />
+      </Container>
+    </main>
+  )
 }
 
 export default App;
