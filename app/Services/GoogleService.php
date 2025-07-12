@@ -12,7 +12,7 @@ class GoogleService
 
   public function __construct(User $user)
   {
-    $googleAuthToken = $user->google_auth_token;
+    $googleAuthToken = $user->google_token;
     $googleRefreshToken = $user->google_refresh_token;
     $this->client = new Google_Client();
     $this->client->setAccessToken($googleAuthToken);
@@ -20,7 +20,7 @@ class GoogleService
     if ($this->client->isAccessTokenExpired() && $googleRefreshToken) {
       $this->client->fetchAccessTokenWithRefreshToken($googleRefreshToken);
       $newToken = $this->client->getAccessToken();
-      $user->google_auth_token = $newToken['access_token'];
+      $user->google_token = $newToken['access_token'];
       $user->google_refresh_token = $newToken['refresh_token'];
       $user->save();
     }

@@ -17,7 +17,7 @@ class GmailService
 
   public function __construct(User $user)
   {
-    $googleAuthToken = $user->google_auth_token;
+    $googleAuthToken = $user->google_token;
     $googleRefreshToken = $user->google_refresh_token;
     $service = new GoogleService($user, $googleAuthToken, $googleRefreshToken);
     $this->client = $service->getClient();

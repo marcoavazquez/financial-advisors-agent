@@ -24,6 +24,9 @@ class User extends Authenticatable
         'google_token',
         'google_refresh_token',
         'google_token_expires_at',
+        'hubspot_access_token',
+        'hubspot_refresh_token',
+        'hubspot_token_expires_at',
     ];
 
     /**
