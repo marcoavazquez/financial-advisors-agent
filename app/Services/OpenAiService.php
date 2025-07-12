@@ -32,7 +32,7 @@ class OpenAiService
   {
     try {
       $params = [
-        'model' => 'gpt-3.5-turbo-0613',
+        'model' => 'gpt-4.1-nano',
         'messages' => $messages,
         'temperature' => 0.7,
       ];
